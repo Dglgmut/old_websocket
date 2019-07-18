@@ -1,24 +1,12 @@
-# README
+# Old Websocket key value project
+Check out the new one here: `https://github.com/Dglgmut/new_websocket`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## using in production
+You can test this app at `https://www.websocket.org/echo.html`
+This server is available for use at the URL: `wss://keyvaluecloudwalk.herokuapp.com/keyvalue`
 
-Things you may want to cover:
+To send a message, first subscribe to the main ActionCable channel with the following json:
+`{  "command"  :   "subscribe",   "identifier" : "{ \"channel\" : \"KeyValueChannel\" }"}`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Afterwards, you can send the "key value" requests: 
+`{  "command"  :   "message",  "identifier": "{ \"channel\" : \"KeyValueChannel\" }", "data" : "{ \"key\" : \"1\" }"}`
